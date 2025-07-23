@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calcolatore PokerBoost</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e1e1e;
+      color: #f1f1f1;
+      text-align: center;
+      padding: 40px;
+      margin: 0;
+    }
+    h1 {
+      color: #00ff99;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 1em;
+    }
+    button {
+      background: #00ff99;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #risultato {
+      margin-top: 20px;
+      font-size: 1.4em;
+      color: #ffd700;
+    }
+    a {
+      color: #00ff99;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Calcolatore Percentuali Poker</h1>
+  <p>Inserisci la tua probabilità di vittoria (in percentuale):</p>
+  <input type="number" id="prob" placeholder="Esempio: 65" />
+  <button onclick="calcola()">Calcola</button>
+
+  <div id="risultato"></div>
+
+  <a href="index.html">⬅️ Torna alla Home</a>
+
+  <script>
+    function calcola() {
+      const prob = parseFloat(document.getElementById("prob").value);
+      if (isNaN(prob) || prob <= 0 || prob >= 100) {
+        document.getElementById("risultato").innerText = "Inserisci un numero valido tra 1 e 99.";
+        return;
+      }
+      const equity = prob / 100;
+      const odds = (1 - equity) / equity;
+      document.getElementById("risultato").innerText = `Odds contro: ${odds.toFixed(2)} : 1`;
+    }
+  </script>
+</body>
+</html>
