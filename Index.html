@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Consigli Poker</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 30px auto; }
+    input, button { padding: 8px; font-size: 16px; }
+    #output { margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Consigli Poker</h1>
+  <p>Inserisci la tua mano (es: "A♠ K♠"):</p>
+  <input type="text" id="handInput" placeholder="Es. A♠ K♠" />
+  <button onclick="daiConsiglio()">Mostra consiglio</button>
 
+  <div id="output"></div>
+
+  <script>
+    // Funzione base per dare un consiglio semplice sulle mani
+    function daiConsiglio() {
+      const mano = document.getElementById('handInput').value.trim().toUpperCase();
+      const output = document.getElementById('output');
+
+      if (!mano) {
+        output.textContent = "Per favore inserisci una mano valida.";
+        return;
+      }
+
+      // Esempio molto semplice di controllo mano
+      if (mano === "A♠ K♠" || mano === "A S K S") {
+        output.textContent = "Mano molto forte! Consiglio: rilancia.";
+      } else if (mano.includes("A") && mano.includes("K")) {
+        output.textContent = "Mano buona, valuta la situazione e gli avversari.";
+      } else {
+        output.textContent = "Mano debole, procedi con cautela.";
+      }
+    }
+  </script>
+</body>
+</html>
