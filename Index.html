@@ -3,41 +3,122 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Consigli Poker</title>
+  <title>PokerBoost - Migliora il tuo Gioco</title>
   <style>
-    body { font-family: Arial, sans-serif; max-width: 600px; margin: 30px auto; }
-    input, button { padding: 8px; font-size: 16px; }
-    #output { margin-top: 20px; font-weight: bold; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #f1f1f1;
+    }
+    header {
+      background-color: #111;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5em;
+      color: #00ff99;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #ccc;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: #00ff99;
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #00ff99;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .features {
+      padding: 40px 20px;
+      background-color: #2a2a2a;
+    }
+    .features h3 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.5em;
+    }
+    .feature-item {
+      max-width: 600px;
+      margin: 0 auto 20px;
+      background-color: #333;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .ads {
+      text-align: center;
+      margin: 50px 0;
+    }
+    .ads div {
+      width: 300px;
+      height: 250px;
+      background-color: #444;
+      margin: 0 auto;
+      color: #999;
+      line-height: 250px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-  <h1>Consigli Poker</h1>
-  <p>Inserisci la tua mano (es: "A♠ K♠"):</p>
-  <input type="text" id="handInput" placeholder="Es. A♠ K♠" />
-  <button onclick="daiConsiglio()">Mostra consiglio</button>
+  <header>
+    <h1>PokerBoost</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="calcolatore.html">Calcolatore</a>
+      <a href="consigli.html">Consigli</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+  </header>
 
-  <div id="output"></div>
+  <div class="hero">
+    <h2>Diventa un giocatore di poker più forte, intelligente e redditizio.</h2>
+    <a href="calcolatore.html" class="btn">Vai al Calcolatore</a>
+  </div>
 
-  <script>
-    // Funzione base per dare un consiglio semplice sulle mani
-    function daiConsiglio() {
-      const mano = document.getElementById('handInput').value.trim().toUpperCase();
-      const output = document.getElementById('output');
+  <section class="features">
+    <h3>Cosa troverai su PokerBoost?</h3>
+    <div class="feature-item">
+      🎯 Calcolatori intelligenti per odds e probabilità reali.
+    </div>
+    <div class="feature-item">
+      📘 Articoli e strategie per giocare meglio online e live.
+    </div>
+    <div class="feature-item">
+      💰 Guide su come guadagnare col poker in modo serio.
+    </div>
+  </section>
 
-      if (!mano) {
-        output.textContent = "Per favore inserisci una mano valida.";
-        return;
-      }
+  <section class="ads">
+    <div>📢 Spazio pubblicità</div>
+  </section>
 
-      // Esempio molto semplice di controllo mano
-      if (mano === "A♠ K♠" || mano === "A S K S") {
-        output.textContent = "Mano molto forte! Consiglio: rilancia.";
-      } else if (mano.includes("A") && mano.includes("K")) {
-        output.textContent = "Mano buona, valuta la situazione e gli avversari.";
-      } else {
-        output.textContent = "Mano debole, procedi con cautela.";
-      }
-    }
-  </script>
+  <footer>
+    <p>&copy; 2025 PokerBoost - Tutti i diritti riservati</p>
+  </footer>
 </body>
 </html>
